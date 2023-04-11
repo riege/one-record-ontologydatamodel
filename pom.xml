@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.riege</groupId>
+    <artifactId>one-record-cargo</artifactId>
+    <version>2.1.0</version>
+    <name>IATA ONE Record Ontology Data-Model</name>
+    <description>
+        IATA ONE Record Ontology Data-Model,
+        based on (https://github.com/IATA-Cargo/ONE-Record).
+    </description>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <cz.cvut.kbss.jopa.version>0.21.1</cz.cvut.kbss.jopa.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>cz.cvut.kbss.jopa</groupId>
+            <artifactId>jopa-maven-plugin</artifactId>
+            <version>${cz.cvut.kbss.jopa.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cz.cvut.kbss.jopa</groupId>
+            <artifactId>jopa-api</artifactId>
+            <version>${cz.cvut.kbss.jopa.version}</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <resources>
+            <resource>
+                <!-- let's exclude the TTL and mapping file for the generated JAR -->
+                <directory>${basedir}/src/main/resources</directory>
+                <excludes>
+                    <exclude>*.ttl</exclude>
+                    <exclude>mapping</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <!-- Generate entity classes from OWL integrity constraints -->
+                <groupId>cz.cvut.kbss.jopa</groupId>
+                <artifactId>jopa-maven-plugin</artifactId>
+                <version>${cz.cvut.kbss.jopa.version}</version>
+                <configuration>
+                    <mapping-file>${project.basedir}/src/main/resources/mapping</mapping-file>
+                    <output-directory>${project.build.directory}/generated-sources</output-directory>
+                    <vocabulary-only>false</vocabulary-only>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>id_for_cargo_ontology</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>owl2java-transform</goal>
+                        </goals>
+                        <configuration>
+                            <package>org.iata.onerecord.cargo</package>
+                            <ontology-iri>https://onerecord.iata.org/cargo</ontology-iri>
+                        </configuration>
+                    </execution>
+                    <!--
+                    API model is a bit broken because there is
+
+                        https://onerecord.iata.org/api/Branch
+                        https://onerecord.iata.org/api/Company
+
+                    plus
+
+                        https://onerecord.iata.org/Branch
+                        https://onerecord.iata.org/Company
+
+                    which causes 2 toString methods to be produced... WTF?
+                    <execution>
+                        <id>we_need_an_id_this_is_api</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>owl2java-transform</goal>
+                        </goals>
+                        <configuration>
+                          <package>org.iata.onerecord.api</package>
+                          <ontology-iri>https://onerecord.iata.org/api</ontology-iri>
+                        </configuration>
+                    </execution>
+                    -->
+                </executions>
+            </plugin>
+            <!-- Add generated sources to classpath for maven -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.build.directory}/generated-sources</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
