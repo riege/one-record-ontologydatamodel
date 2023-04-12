@@ -18,16 +18,22 @@ codes from the Ontology.
 See also [IATA-Cargo/ONE-Record Issue#92](https://github.com/IATA-Cargo/ONE-Record/issues/92) for details about
 "Standard values of enumerations".
 
-## How to use / other projects
+## How to use / integrate
 
-See also https://github.com/riege/one-record-ontologymodel, which covers DataModel- and
-API-Ontology.
+To integrate this library in your own project, follow instructions at
+https://jitpack.io/#riege/one-record-ontologydatamodel because this library 
+is not published on Maven Central Repository. 
+
+<!-- https://github.com/riege/one-record-converter used -->
+
+### Related projects
+
+See also https://github.com/riege/one-record-ontologymodel, a predecessor of 
+this repository, which covers DataModel- plus API-Ontology.
 <br>
 Public projects like [IATA one-record-server-java](https://github.com/IATA-Cargo/one-record-server-java)
 or [NE:ONE ONE Record server](https://git.openlogisticsfoundation.org/digital-air-cargo/ne-one)
-use similar approaches with embedded Java Classes.
-
-<!-- https://github.com/riege/one-record-converter used -->
+use similar approaches with embedded Java POJOs.
 
 ### Building
 
