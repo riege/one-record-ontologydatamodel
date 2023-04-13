@@ -8,7 +8,7 @@ official IATA Ontology on GitHub at https://github.com/IATA-Cargo/ONE-Record.
 Note that the deliverable of this project contains POJO classes from the
 Ontologies for "Data-Model" _only_, excluding the "API" part.
 
-### Codelists
+### Codelists and Utility
 This repository additionally contains some assisting classes e.g.,
 in package `org.iata.onerecord.cargo.codelists` which are not generated from the
 Ontology but handcrafted and might be useful for fields where values are limited 
@@ -17,6 +17,14 @@ Please note the `codelists` packages are incomplete and do not  mirror all
 codes from the Ontology.
 See also [IATA-Cargo/ONE-Record Issue#92](https://github.com/IATA-Cargo/ONE-Record/issues/92) for details about
 "Standard values of enumerations".
+
+Package `org.iata.onerecord.cargo.util` contains utility 
+class `ONERecordCargoUtil` which provides a `create(Class<T>)` method
+which creates a logistics object created with correct types attribute
+as per Vocabulary, e.g. used like
+
+    Waybill obj = ONERecordCargoUtil.create(Waybill.class);
+
 
 ## How to use / integrate
 
