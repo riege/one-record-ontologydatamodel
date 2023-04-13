@@ -45,6 +45,12 @@ The following maven command generates the full package (.jar-file in `target` di
 
     ./mvnw clean package
 
+Building with a given version number (e.g. 1.2.3) is achieved with
+
+    ./mvnw -Drevision=1.2.3 clean package
+
+which will generate `target/one-record-cargo-1.2.3.jar`
+
 ### Generation from (a new) Ontology
 
 Updating with a new Ontology works by updating content in directory `src/main/resources`, the TTL file and adopt the `mapping` file.

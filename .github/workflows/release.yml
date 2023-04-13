@@ -1,0 +1,35 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v?[0-9]+.[0-9]+.[0-9]+*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout latest code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK with Dependency Caching
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: 8
+          cache: 'maven'
+
+      - name: Get tag version
+        id: get_version
+        uses: battila7/get-version-action@v2
+
+      - name: Create release artifacts
+        run: ./mvnw -Drevision=${{ steps.get_version.outputs.version-without-v }} clean package
+
+      - name: Release without Changelog
+        uses: softprops/action-gh-release@v1
+        with:
+          name: ONE.Record Ontology-DataModel Library ${{ steps.get_version.outputs.version-without-v }}
+          files: |
+            target/*.jar
