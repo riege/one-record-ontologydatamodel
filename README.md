@@ -43,6 +43,18 @@ Public projects like [IATA one-record-server-java](https://github.com/IATA-Cargo
 or [NE:ONE ONE Record server](https://git.openlogisticsfoundation.org/digital-air-cargo/ne-one)
 use similar approaches with embedded Java POJOs.
 
+### Comparison [one-record-ontologydatamodel](https://github.com/riege/one-record-ontologydatamodel) and [one-record-ontologymodel](https://github.com/riege/one-record-ontologymodel)
+
+|                                                                                                                      | [one-record-ontologydatamodel](https://github.com/riege/one-record-ontologydatamodel) | [one-record-ontologymodel](https://github.com/riege/one-record-ontologymodel)                                                                                                      |
+|----------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Ontology 1.1 / 2021-June](https://github.com/IATA-Cargo/ONE-Record/tree/master/June-2021-standard-COTB-endorsed)    | not available (Note 1)                                                                | Yes (Release 1.1.x)                                                                                                                                                                |
+| [Ontology 2.0 / 2022-May](https://github.com/IATA-Cargo/ONE-Record/tree/master/May-2022-standard-forCOTBendorsement) | not available (Note 1)                                                                | Yes (2.0.x)                                                                                                                                                                        |
+| [Ontology 2.1 / 2022-December](https://github.com/IATA-Cargo/ONE-Record/tree/master/December-2022-standard)          | Yes                                                                                   | not available                                                                                                                                                                      |
+| Scope                                                                                                                | DataModel Ontology only                                                               | API + DataModel  Ontology                                                                                                                                                          |
+| 3rd party Java annotations                                                                                           | none (clean API)                                                                      | [Jackson](https://github.com/FasterXML/jackson), [Swagger IO](https://github.com/swagger-api/swagger.io),  [Spring Framework](https://github.com/spring-projects/spring-framework) |
+
+Note 1: Not released but can be build manually by replacing Ontology file and building manually within project.
+
 ### Building
 
 Execute the following on commandline to generate the sources from the Ontology file:
