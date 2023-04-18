@@ -23,11 +23,16 @@
             <groupId>cz.cvut.kbss.jopa</groupId>
             <artifactId>jopa-maven-plugin</artifactId>
             <version>${cz.cvut.kbss.jopa.version}</version>
+            <!-- only used internally, not require when this jar is used -->
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>cz.cvut.kbss.jopa</groupId>
             <artifactId>jopa-api</artifactId>
             <version>${cz.cvut.kbss.jopa.version}</version>
+            <!-- contains the annotations, required when this jar is used -->
+            <!-- scope = compile is the default -->
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
