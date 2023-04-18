@@ -24,7 +24,7 @@
             <artifactId>jopa-maven-plugin</artifactId>
             <version>${cz.cvut.kbss.jopa.version}</version>
             <!-- only used internally, not require when this jar is used -->
-            <scope>runtime</scope>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>cz.cvut.kbss.jopa</groupId>
