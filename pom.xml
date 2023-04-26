@@ -16,7 +16,7 @@
         <revision>1.0.0-SNAPSHOT</revision>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <cz.cvut.kbss.jopa.version>0.21.1</cz.cvut.kbss.jopa.version>
+        <cz.cvut.kbss.jopa.version>0.22.0</cz.cvut.kbss.jopa.version>
     </properties>
     <dependencies>
         <dependency>
