@@ -88,7 +88,7 @@
                         </configuration>
                     </execution>
                     <!--
-                    API model is a bit broken because there is
+                    (pre 3.0.0) API model is broken because there is
 
                         https://onerecord.iata.org/api/Branch
                         https://onerecord.iata.org/api/Company
@@ -99,6 +99,7 @@
                         https://onerecord.iata.org/Company
 
                     which causes 2 toString methods to be produced... WTF?
+                    -->
                     <execution>
                         <id>we_need_an_id_this_is_api</id>
                         <phase>generate-sources</phase>
@@ -107,10 +108,9 @@
                         </goals>
                         <configuration>
                           <package>org.iata.onerecord.api</package>
-                          <ontology-iri>https://onerecord.iata.org/api</ontology-iri>
+                          <ontology-iri>https://onerecord.iata.org/ns/api/2.0.0-dev</ontology-iri>
                         </configuration>
                     </execution>
-                    -->
                 </executions>
             </plugin>
             <!-- Add generated sources to classpath for maven -->
