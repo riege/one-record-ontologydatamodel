@@ -88,6 +88,19 @@ This project aims to keep its releases and versioning in synchronization with th
 | 2.1.x / [2022-Dec](https://github.com/IATA-Cargo/ONE-Record/tree/master/December-2022-standard)               | 2.1.x see [2.1.3](../../releases/tag/2.1.3) |
 -->
 
+## Adding API Ontology
+ONE-Record-API-Ontology-2.0.0-dev.ttl got added experimentally, which required the following changes:
+
+* adding ONE-Record-API-Ontology-2.0.0-dev.ttl into src/main/resources/mapping
+* adding a '#' to comment out line 14 in ttl file containing `owl:imports cargo: ;`
+* adding ONE-Record-API-Ontology-2.0.0-dev.ttl to src/main/resources/mapping file
+* adding the API generation part in pom.xml
+
+Disabling `owl:imports cargo` causes generation of `LogisticsObject.java` and `Thing.java` in 
+packages `org.iata.onerecord.api.model` as well as in `org.iata.onerecord.cargo.model`. This
+would be fixed by not commenting out the import, but currently (on the DEV version) the import 
+triggers loading of the cargo ontology from a webside which fails.
+
 ## Question and Feedback
 
 For any issues or questions with the ONE Record Ontology data model as such,
