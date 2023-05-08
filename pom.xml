@@ -85,6 +85,20 @@
                         <configuration>
                             <package>org.iata.onerecord.cargo</package>
                             <ontology-iri>https://onerecord.iata.org/cargo</ontology-iri>
+                            <!-- config options are :
+                                String  mapping-file - see above
+                                String  package - see above
+                                String  context-name
+                                String  ontology-iri
+                                String  output-directory
+                                boolean, defaultValue = "false" with-owlapi
+                                boolean, defaultValue = "false" whole-ontology-as-ics
+                                boolean, defaultValue = "false" vocabulary-only
+                                boolean, defaultValue = "false" ignore-failed-imports
+                                String, defaultValue = "String" properties-type
+                                boolean, defaultValue = "true"  javadoc-from-rdfs-comment (=generate JavaDoc)
+                                boolean, defaultValue = "true"  prefer-multilingual-strings
+                            -->
                         </configuration>
                     </execution>
                     <!--
