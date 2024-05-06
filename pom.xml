@@ -80,6 +80,7 @@
                 </configuration>
                 <executions>
                     <execution>
+                        <id>CARGO</id>
                         <!-- disabled due to certificate error during GitHub build. Change this to generate-sources and run ./mvnw generate-sources-->
                         <phase>none</phase>
                         <goals>
@@ -106,7 +107,7 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>we_need_an_id_this_is_api</id>
+                        <id>API</id>
                         <!-- disabled due to certificate error during GitHub build. Change this to generate-sources and run ./mvnw generate-sources-->
                         <phase>none</phase>
                         <goals>
@@ -115,6 +116,19 @@
                         <configuration>
                             <package>org.iata.onerecord.api</package>
                             <ontology-iri>https://onerecord.iata.org/ns/api/ontology.ttl</ontology-iri>
+                            <ignore-failed-imports>true</ignore-failed-imports>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>CoreCodeLists</id>
+                        <!-- disabled due to certificate error during GitHub build. Change this to generate-sources and run ./mvnw generate-sources-->
+                        <phase>none</phase>
+                        <goals>
+                            <goal>owl2java-transform</goal>
+                        </goals>
+                        <configuration>
+                            <package>org.iata.onerecord.ccl</package>
+                            <ontology-iri>https://onerecord.iata.org/ns/coreCodeLists/ontology.ttl</ontology-iri>
                             <ignore-failed-imports>true</ignore-failed-imports>
                         </configuration>
                     </execution>
