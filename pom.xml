@@ -60,6 +60,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
+                <version>3.3.0</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -81,7 +82,8 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <phase>generate-sources</phase>
+                        <!-- disabled due to certificate error during GitHub build. Change this to generate-sources and run ./mvnw generate-sources-->
+                        <phase>none</phase>
                         <goals>
                             <goal>owl2java-transform</goal>
                         </goals>
@@ -107,7 +109,8 @@
                     </execution>
                     <execution>
                         <id>we_need_an_id_this_is_api</id>
-                        <phase>generate-sources</phase>
+                        <!-- disabled due to certificate error during GitHub build. Change this to generate-sources and run ./mvnw generate-sources-->
+                        <phase>none</phase>
                         <goals>
                             <goal>owl2java-transform</goal>
                         </goals>
@@ -127,7 +130,8 @@
                 <executions>
                     <execution>
                         <id>add-source</id>
-                        <phase>generate-sources</phase>
+                        <!-- disabled due to certificate error during GitHub build. Change this to generate-sources and run ./mvnw generate-sources-->
+                        <phase>none</phase>
                         <goals>
                             <goal>add-source</goal>
                         </goals>
