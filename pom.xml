@@ -16,16 +16,20 @@
         <revision>1.0.0-SNAPSHOT</revision>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <cz.cvut.kbss.jopa.version>0.22.2</cz.cvut.kbss.jopa.version>
+        <cz.cvut.kbss.jopa.version>1.2.2</cz.cvut.kbss.jopa.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>cz.cvut.kbss.jopa</groupId>
             <artifactId>jopa-maven-plugin</artifactId>
             <version>${cz.cvut.kbss.jopa.version}</version>
-            <!-- only used internally, not require when this jar is used -->
             <scope>provided</scope>
         </dependency>
+            <dependency>
+                <groupId>cz.cvut.kbss.jopa</groupId>
+                <artifactId>ontodriver-rdf4j</artifactId>
+                <version>${cz.cvut.kbss.jopa.version}</version>
+            </dependency>
         <dependency>
             <groupId>cz.cvut.kbss.jopa</groupId>
             <artifactId>jopa-api</artifactId>
@@ -73,18 +77,18 @@
                 <configuration>
                     <mapping-file>${project.basedir}/src/main/resources/mapping</mapping-file>
                     <output-directory>${project.build.directory}/generated-sources</output-directory>
-                    <vocabulary-only>false</vocabulary-only>
+                    <package>org.iata.onerecord.cargo</package>
                 </configuration>
                 <executions>
                     <execution>
-                        <id>id_for_cargo_ontology</id>
                         <phase>generate-sources</phase>
                         <goals>
                             <goal>owl2java-transform</goal>
                         </goals>
                         <configuration>
                             <package>org.iata.onerecord.cargo</package>
-                            <ontology-iri>https://onerecord.iata.org/cargo</ontology-iri>
+                            <ontology-iri>https://onerecord.iata.org/ns/cargo/ontology.ttl</ontology-iri>
+                            <ignore-failed-imports>true</ignore-failed-imports>
                             <!-- config options are :
                                 String  mapping-file - see above
                                 String  package - see above
@@ -101,18 +105,6 @@
                             -->
                         </configuration>
                     </execution>
-                    <!--
-                    API model is a bit broken because there is
-
-                        https://onerecord.iata.org/api/Branch
-                        https://onerecord.iata.org/api/Company
-
-                    plus
-
-                        https://onerecord.iata.org/Branch
-                        https://onerecord.iata.org/Company
-
-                    which causes 2 toString methods to be produced... WTF?
                     <execution>
                         <id>we_need_an_id_this_is_api</id>
                         <phase>generate-sources</phase>
@@ -120,11 +112,11 @@
                             <goal>owl2java-transform</goal>
                         </goals>
                         <configuration>
-                          <package>org.iata.onerecord.api</package>
-                          <ontology-iri>https://onerecord.iata.org/api</ontology-iri>
+                            <package>org.iata.onerecord.api</package>
+                            <ontology-iri>https://onerecord.iata.org/ns/api/ontology.ttl</ontology-iri>
+                            <ignore-failed-imports>true</ignore-failed-imports>
                         </configuration>
                     </execution>
-                    -->
                 </executions>
             </plugin>
             <!-- Add generated sources to classpath for maven -->
