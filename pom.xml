@@ -81,8 +81,7 @@
                 <executions>
                     <execution>
                         <id>CARGO</id>
-                        <!-- disabled due to certificate error during GitHub build. Change this to generate-sources and run ./mvnw generate-sources-->
-                        <phase>none</phase>
+                        <phase>generate-sources</phase>
                         <goals>
                             <goal>owl2java-transform</goal>
                         </goals>
@@ -108,8 +107,7 @@
                     </execution>
                     <execution>
                         <id>API</id>
-                        <!-- disabled due to certificate error during GitHub build. Change this to generate-sources and run ./mvnw generate-sources-->
-                        <phase>none</phase>
+                        <phase>generate-sources</phase>
                         <goals>
                             <goal>owl2java-transform</goal>
                         </goals>
@@ -121,8 +119,7 @@
                     </execution>
                     <execution>
                         <id>CoreCodeLists</id>
-                        <!-- disabled due to certificate error during GitHub build. Change this to generate-sources and run ./mvnw generate-sources-->
-                        <phase>none</phase>
+                        <phase>generate-sources</phase>
                         <goals>
                             <goal>owl2java-transform</goal>
                         </goals>
@@ -142,8 +139,7 @@
                 <executions>
                     <execution>
                         <id>add-source</id>
-                        <!-- disabled due to certificate error during GitHub build. Change this to generate-sources and run ./mvnw generate-sources-->
-                        <phase>none</phase>
+                        <phase>generate-sources</phase>
                         <goals>
                             <goal>add-source</goal>
                         </goals>
