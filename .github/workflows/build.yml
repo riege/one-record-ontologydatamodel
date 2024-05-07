@@ -29,7 +29,7 @@ jobs:
 
       - name: execute a keytool import function
         shell: bash
-        run: keytool -import -noprompt -trustcacerts -alias onerecord -file src/main/resources/onerecord.iata.org.cer -keystore ${{ steps.java.outputs.path }}/lib/security/cacerts -storepass {{ secrets.KEYSTORE_PASS }}
+        run: keytool -importcert -noprompt -trustcacerts -v -alias onerecord -file src/main/resources/onerecord.iata.org.cer -keystore ${{ steps.java.outputs.path }}/lib/security/cacerts -storepass changeit
 
       - name: Build and test
         run: ./mvnw clean package
