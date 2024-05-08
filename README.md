@@ -40,12 +40,13 @@ Public projects like [IATA one-record-server-java](https://github.com/IATA-Cargo
 or [NE:ONE ONE Record server](https://git.openlogisticsfoundation.org/digital-air-cargo/ne-one)
 use similar approaches with embedded Java POJOs.
 
+
 ### Versioning
 
 Since we aim to keep the version numbers in relation to the used ontology version we decided to use a slightly different pattern for the versioning.
-The most recent version of the DataModel Ontology is: **3.0.0** (as of 07-05-2024). The next release of this project will therefore get the version: **0.3.0000**. 
-An internal bugfix would then result in the release version **0.3.0001** and if a new ontology is used e.g. version **3.0.1** for the DataModel, 
-this would then result in the release of **0.3.1000**.
+The most recent version of the DataModel Ontology is: **3.0.0** (as of 07-05-2024). The next release of this project will therefore get the version: **3.0.0000**. 
+An internal bugfix would then result in the release version **3.0.0001** and if a new ontology is used e.g. version **3.0.1** for the DataModel, 
+this would then result in the release of **3.0.1000**.
 
 ### Building
 
@@ -80,6 +81,10 @@ DataModel: 3.0.0 (as of 03-11-2023)
 API: 2.0.0 (as of 02-05-2023)
 
 CoreCodeLists: 1.0.0 (as of 23-10-2023)
+
+### Older releases of this project
+
+[Ontology 2.1 / 2022-December](https://github.com/IATA-Cargo/ONE-Record/tree/master/2022-12-standard) - Release version: 0.2.5, contains DataModel classes only! Used ontology version: 2.1.3 (as of 01-03-2023)
 
 ## Question and Feedback
 
