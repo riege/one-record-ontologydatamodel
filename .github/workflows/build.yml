@@ -21,11 +21,16 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up JDK with Dependency Caching
+        id: java
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '8'
+          java-version: '21'
           cache: 'maven'
+
+      - name: execute a keytool import function
+        shell: bash
+        run: sudo keytool -importcert -noprompt -trustcacerts -v -alias onerecord -file src/main/resources/onerecord.iata.org.cer -keystore ${{ steps.java.outputs.path }}/lib/security/cacerts -storepass changeit
 
       - name: Build and test
         run: ./mvnw clean package

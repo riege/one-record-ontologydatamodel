@@ -6,7 +6,7 @@ This repository contains **Java POJO classes for IATA ONE Record** (1R) data mod
 official IATA Ontology on GitHub at https://github.com/IATA-Cargo/ONE-Record.
 
 Note that the deliverable of this project contains POJO classes from the
-Ontologies for "Data-Model" _only_, excluding the "API" part.
+Ontologies for "Data-Model", "API" and the "CoreCodeLists" part.
 
 ### Codelists and Utility
 This repository additionally contains some assisting classes e.g.,
@@ -36,24 +36,17 @@ is not published on Maven Central Repository.
 
 ### Related projects
 
-See also https://github.com/riege/one-record-ontologymodel, a predecessor of 
-this repository, which covers DataModel- plus API-Ontology.
-<br>
 Public projects like [IATA one-record-server-java](https://github.com/IATA-Cargo/one-record-server-java)
 or [NE:ONE ONE Record server](https://git.openlogisticsfoundation.org/digital-air-cargo/ne-one)
 use similar approaches with embedded Java POJOs.
 
-### Comparison [one-record-ontologydatamodel](https://github.com/riege/one-record-ontologydatamodel) and [one-record-ontologymodel](https://github.com/riege/one-record-ontologymodel)
 
-|                                                                                                                      | [one-record-ontologydatamodel](https://github.com/riege/one-record-ontologydatamodel) | [one-record-ontologymodel](https://github.com/riege/one-record-ontologymodel)                                                                                                      |
-|----------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Ontology 1.1 / 2021-June](https://github.com/IATA-Cargo/ONE-Record/tree/master/June-2021-standard-COTB-endorsed)    | not available (Note 1)                                                                | Yes (Release 1.1.x)                                                                                                                                                                |
-| [Ontology 2.0 / 2022-May](https://github.com/IATA-Cargo/ONE-Record/tree/master/May-2022-standard-forCOTBendorsement) | not available (Note 1)                                                                | Yes (Release 2.0.x)                                                                                                                                                                |
-| [Ontology 2.1 / 2022-December](https://github.com/IATA-Cargo/ONE-Record/tree/master/December-2022-standard)          | Yes                                                                                   | not available                                                                                                                                                                      |
-| Scope                                                                                                                | DataModel Ontology only                                                               | API + DataModel  Ontology                                                                                                                                                          |
-| 3rd party Java annotations                                                                                           | none (clean API)                                                                      | [Jackson](https://github.com/FasterXML/jackson), [Swagger IO](https://github.com/swagger-api/swagger.io),  [Spring Framework](https://github.com/spring-projects/spring-framework) |
+### Versioning
 
-Note 1: Not released but can be build manually by replacing Ontology file and building manually within project.
+Since we aim to keep the version numbers in relation to the used ontology version we decided to use a slightly different pattern for the versioning.
+The most recent version of the DataModel Ontology is: **3.0.0** (as of 07-05-2024). The next release of this project will therefore get the version: **3.0.0000**. 
+An internal bugfix would then result in the release version **3.0.0001** and if a new ontology is used e.g. version **3.0.1** for the DataModel, 
+this would then result in the release of **3.0.1000**.
 
 ### Building
 
@@ -73,7 +66,7 @@ which will generate `target/one-record-cargo-1.2.3.jar`
 
 ### Generation from (a new) Ontology
 
-Updating with a new Ontology works by updating content in directory `src/main/resources`, the TTL file and adopt the `mapping` file.
+Updating with a new Ontology works by updating content in directory `src/main/resources`. Please replace the TTL file(s) and adopt the `mapping` file.
 
 ## Used Ontology / Data model version
 
@@ -81,12 +74,17 @@ In general, the official IATA Ontology determines the 1R data model.  The IATA O
 The IATA [Cargo Operations and Technology Board, COTB](https://www.iata.org/en/programs/workgroups/cotb)
 approved various Ontology versions.
 
-This project aims to keep its releases and versioning in synchronization with the IATA Ontologies, starting with IATA ONE Record Ontology version 2.1.
-<!--
-| IATA Ontology version / endorsement                                                                           | ONE.Record Ontology-Model Library version   |
-|---------------------------------------------------------------------------------------------------------------|---------------------------------------------|
-| 2.1.x / [2022-Dec](https://github.com/IATA-Cargo/ONE-Record/tree/master/December-2022-standard)               | 2.1.x see [2.1.3](../../releases/tag/2.1.3) |
--->
+This project aims to keep its releases and versioning in synchronization with the IATA Ontologies, starting with IATA ONE Record Ontology versions:
+
+DataModel: 3.0.0 (as of 03-11-2023)
+
+API: 2.0.0 (as of 02-05-2023)
+
+CoreCodeLists: 1.0.0 (as of 23-10-2023)
+
+### Older releases of this project
+
+[Ontology 2.1 / 2022-December](https://github.com/IATA-Cargo/ONE-Record/tree/master/2022-12-standard) - Release version: 0.2.5, contains DataModel classes only! Used ontology version: 2.1.3 (as of 01-03-2023)
 
 ## Question and Feedback
 

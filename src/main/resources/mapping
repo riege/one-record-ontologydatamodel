@@ -1,1 +1,3 @@
-https://onerecord.iata.org/cargo > IATA-1R-DM-Ontology-2.1.3.ttl
+https://onerecord.iata.org/cargo/ontology.ttl > IATA-1R-DM-Ontology-3.0.0.ttl
+https://onerecord.iata.org/ns/api/ontology.ttl > ONE-Record-API-Ontology.ttl
+https://onerecord.iata.org/ns/coreCodeLists/ontology.ttl > IATA-1R-CCL-Ontology.ttl
