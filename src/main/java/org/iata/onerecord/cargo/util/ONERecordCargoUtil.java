@@ -19,11 +19,11 @@ public class ONERecordCargoUtil {
      */
     public static final <T> T create(Class<T> clazz) {
         try {
-            T instance = clazz.getConstructor(new Class[0]).newInstance(new Object[0]);
+            T instance = clazz.getConstructor(new Class[0]).newInstance();
             Field field = Class.forName("org.iata.onerecord.cargo.Vocabulary")
                 .getDeclaredField("s_c_" + clazz.getSimpleName());
             Set<String> typeValue = new LinkedHashSet<>(Collections.singletonList((String) field.get(null)));
-            Method typeSetter = clazz.getMethod("setTypes", new Class[] { Set.class } );
+            Method typeSetter = clazz.getMethod("setTypes", Set.class);
             typeSetter.invoke(instance, typeValue);
             return instance;
         } catch (NoSuchMethodException | InstantiationException | IllegalAccessException |
