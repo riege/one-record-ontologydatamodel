@@ -1,0 +1,6 @@
+# Configure jitpack to use java 21
+jdk:
+  - openjdk21
+before_install:
+  - sdk install java 21.0.2-tem
+  - sdk use java 21.0.2-tem
