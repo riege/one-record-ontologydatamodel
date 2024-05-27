@@ -4,3 +4,4 @@ jdk:
 before_install:
   - sdk install java 21.0.2-tem
   - sdk use java 21.0.2-tem
+  - sudo keytool -importcert -noprompt -trustcacerts -v -alias onerecord -file src/main/resources/onerecord.iata.org.cer -keystore ${SDKMAN_CANDIDATES_DIR}/java/current/lib/security/cacerts -storepass changeit
