@@ -33,7 +33,7 @@ jobs:
         run: ./mvnw -Drevision=${{ steps.get_version.outputs.version-without-v }} clean package
 
       - name: Release without Changelog
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           name: ONE.Record Ontology-DataModel Library ${{ steps.get_version.outputs.version-without-v }}
           files: |
