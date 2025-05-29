@@ -14,7 +14,7 @@
     </description>
     <properties>
         <revision>3.0.0000-SNAPSHOT</revision>
-        <cz.cvut.kbss.jopa.version>1.2.2</cz.cvut.kbss.jopa.version>
+        <cz.cvut.kbss.jopa.version>2.4.0</cz.cvut.kbss.jopa.version>
     </properties>
     <dependencies>
         <dependency>
