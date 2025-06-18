@@ -6,7 +6,7 @@ This repository contains **Java POJO classes for IATA ONE Record** (1R) data mod
 official IATA Ontology on GitHub at https://github.com/IATA-Cargo/ONE-Record.
 
 Note that the deliverable of this project contains POJO classes from the
-Ontologies for "Data-Model", "API" and the "CoreCodeLists" part.
+Ontologies for "Data-Model", "API" and the "CodeLists" part.
 
 ### Codelists and Utility
 This repository additionally contains some assisting classes e.g.,
@@ -76,13 +76,15 @@ approved various Ontology versions.
 
 This project aims to keep its releases and versioning in synchronization with the IATA Ontologies, starting with IATA ONE Record Ontology versions:
 
-DataModel: 3.0.0 (as of 03-11-2023)
+DataModel: 3.1.1 (as of 20-02-2025)
 
-API: 2.0.0 (as of 02-05-2023)
+API: 2.1.0 (as of 02-12-2024)
 
-CoreCodeLists: 1.0.0 (as of 23-10-2023)
+CodeLists: 1.0.0 (as of 27-11-2024)
 
 ### Older releases of this project
+
+[Ontology 3.0.0 / 2023-December](https://github.com/IATA-Cargo/ONE-Record/tree/master/2023-12-standard) - Release version: 3.0.0000, contains DataModel, API and CodeList classes. Used ontology versions: DM: 3.0.0, API: 2.0.0-dev, CodeLists: 1.0.0
 
 [Ontology 2.1 / 2022-December](https://github.com/IATA-Cargo/ONE-Record/tree/master/2022-12-standard) - Release version: 0.2.5, contains DataModel classes only! Used ontology version: 2.1.3 (as of 01-03-2023)
 
