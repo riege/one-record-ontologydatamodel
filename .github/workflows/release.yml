@@ -27,7 +27,7 @@ jobs:
 
       - name: execute a keytool import function
         shell: bash
-        run: sudo keytool -importcert -noprompt -trustcacerts -v -alias onerecord -file src/main/resources/onerecord.iata.org.cer -keystore ${{ steps.java.outputs.path }}/lib/security/cacerts -storepass changeit
+        run: sudo keytool -importcert -noprompt -trustcacerts -v -alias onerecord -file src/main/resources/onerecord.iata.org.pem -keystore ${{ steps.java.outputs.path }}/lib/security/cacerts -storepass changeit
 
       - name: Create release artifacts
         run: ./mvnw -Drevision=${{ steps.get_version.outputs.version-without-v }} clean package
