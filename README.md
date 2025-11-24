@@ -32,6 +32,13 @@ To integrate this library in your own project, follow instructions at
 https://jitpack.io/#riege/one-record-ontologydatamodel because this library 
 is not published on Maven Central Repository. 
 
+Newer releases depend upon library cz.cvut.kbss.jopa:jopa-api which requires Java 11 as from version 1.0.0.
+Nevertheless, it might be possible to combine the data model with older java versions, e.g. in a Gradle Java 8 project with
+
+    implementation('com.github.riege:one-record-ontologydatamodel:3.0.0000')
+    implementation('cz.cvut.kbss.jopa:jopa-api') { version {strictly '0.22.2'} } // last Java8 compliant version
+
+
 <!-- https://github.com/riege/one-record-converter used -->
 
 ### Related projects
