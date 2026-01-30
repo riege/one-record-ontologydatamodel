@@ -13,8 +13,8 @@
         based on (https://github.com/IATA-Cargo/ONE-Record).
     </description>
     <properties>
-        <revision>3.1.1000-SNAPSHOT</revision>
-        <cz.cvut.kbss.jopa.version>2.4.0</cz.cvut.kbss.jopa.version>
+        <revision>3.2.0000-SNAPSHOT</revision>
+        <cz.cvut.kbss.jopa.version>2.8.1</cz.cvut.kbss.jopa.version>
     </properties>
     <dependencies>
         <dependency>
@@ -88,6 +88,7 @@
                         </goals>
                         <configuration>
                             <package>org.iata.onerecord.cargo</package>
+                            <mapping-file>src/main/resources/mapping</mapping-file>
                             <ontology-iri>https://onerecord.iata.org/ns/cargo/ontology.ttl</ontology-iri>
                             <ignore-failed-imports>true</ignore-failed-imports>
                             <!-- config options are :
@@ -114,6 +115,7 @@
                         </goals>
                         <configuration>
                             <package>org.iata.onerecord.api</package>
+                            <mapping-file>src/main/resources/mapping</mapping-file>
                             <ontology-iri>https://onerecord.iata.org/ns/api/ontology.ttl</ontology-iri>
                             <ignore-failed-imports>true</ignore-failed-imports>
                         </configuration>
@@ -126,7 +128,8 @@
                         </goals>
                         <configuration>
                             <package>org.iata.onerecord.ccl</package>
-                            <ontology-iri>https://onerecord.iata.org/ns/coreCodeLists/ontology.ttl</ontology-iri>
+                            <mapping-file>src/main/resources/mapping</mapping-file>
+                            <ontology-iri>https://onerecord.iata.org/ns/code-lists/ontology.ttl</ontology-iri>
                             <ignore-failed-imports>true</ignore-failed-imports>
                         </configuration>
                     </execution>
