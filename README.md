@@ -83,13 +83,15 @@ approved various Ontology versions.
 
 This project aims to keep its releases and versioning in synchronization with the IATA Ontologies, starting with IATA ONE Record Ontology versions:
 
-DataModel: 3.2 (as of 24-06-2025)
+DataModel: 3.3 (as of 12-08-2026)
 
-API: 2.2.0 (as of 06-05-2025)
+API: 2.3.0 (as of 25-07-2026)
 
 CodeLists: 1.1.0 (as of 24-06-2025)
 
 ### Older releases of this project
+
+[Ontology 3.2 / 2025 June](https://github.com/IATA-Cargo/ONE-Record/tree/master/2025-07-standard) - Release version: 3.2.0000, contains DataModel, API and CodeList classes. Used ontology versions: DM: 3.2, API: 2.2.0, CodeLists: 1.1.0
 
 [Ontology 3.1.1 / 2025-February](https://github.com/IATA-Cargo/ONE-Record/tree/master/2024-12-standard) - Release version: 3.1.1000, contains DataModel, API and CodeList classes. Used ontology versions: DM: 3.1.1, API: 2.1.0, CodeLists: 1.0.0
 

@@ -33,7 +33,7 @@ Version 1.0.0
 #################################################################
 #    Annotation properties
 #################################################################
-s
+
 ###  http://purl.org/dc/elements/1.1/description
 dc:description rdf:type owl:AnnotationProperty .
 
